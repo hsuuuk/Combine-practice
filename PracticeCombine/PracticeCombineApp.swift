@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PracticeCombineApp: App {
+    @StateObject var bookListviewModel = BookListViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BookListView()
+                .environmentObject(bookListviewModel)
         }
     }
 }
